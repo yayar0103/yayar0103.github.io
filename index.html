@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .menu img{
+        .main{
+        background-color:rgba(12, 48, 116, 0.349);
+        text-align: right;
+        font-size: 0px;
+        }
+
+        .main img{
             padding: 10px;
             border-radius: 45%;
             text-align: left;
         }
-        .menu p{
+        .main p{
             text-align: left;
         }
         .title{
@@ -28,14 +34,14 @@
             padding-left: 30px;
             margin-top: 140px;
         }
-        a:link{
+        .indext a:link{
             text-decoration: none;
-            color: rgb(240, 228, 232);
+            color: rgba(170, 120, 136, 0.726);
         }
-        a:visited{
-            color: rgb(231, 201, 211);
+        .indext a:visited{
+            color: rgb(170, 120, 136, 0.726);
         }
-        a:hover{
+        .indext a:hover{
             color:rgba(33, 132, 139, 0.637);
         }
 
@@ -44,8 +50,12 @@
 <body>
 <div id="container">
     <div class="title">Coding practice</div>
-    <div class="menu">     
-        <img src="/photo/head.jpg" width="80px" height="80px" alt="">
+    <div class="main">     
+        <a href="index.html"><img src="/photo/head.jpg" width="80px" height="80px" alt=""></a>
+        <a href="#" onclick="window.open('https://www.instagram.com/____yayar/?hl=zh-tw');"><img src="photo/contact01.png" width="40px" height="40px" alt=""></a> 
+        <a href="#" onclick="window.open('https://www.facebook.com/xiao.w.ya.3/');"><img src="photo/contact02.png" width="40px" height="40px" alt=""></a> 
+        <a href="https://www.facebook.com/xiao.w.ya.3"><img src="photo/contact03.png" width="40px" height="40px" alt=""></a> 
+ 
     </div>
     <div class="indext">
         <a href="lora.html">LORA</a><br>
@@ -53,7 +63,6 @@
         <a href="raspberrypi.html">RASPBERRYPI</a><br>
         <a href="lora-gps.html">LORA-APPLICATION</a><br>
         <a href="other.html"> OTHER</a><br><br><br>
-        <a href="other.html"> CONTACT</a><br>
     </div>
     <div class="footer">
         &copy; copyright 2020 by yayar Hsiao<br><br>
