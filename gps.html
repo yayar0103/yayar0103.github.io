@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        li img{
+            float: left;
+        }
+        .note0{
+            display: flex;
+            margin: 0px 10px 0px 10px;
+        }
+        .note{
+            width: 100%;
+        }
+        .item0 p{
+            color: rgb(231, 10, 10);
+            font-weight: bold;
+            font-size: 18px;   
+            margin-bottom: 10px; 
+            text-align: center;
+        }
+     
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="menu">
+        <a href="01.html">MENU</a>
+        <a href="lora.html">LORA</a>
+        <a href="gps.html">GPS</a>
+        <a href="lora-gps.html">LORA-application</a>
+        <a href="raspberrypi.html">RASPBERRYPI</a>
+        <a href="other.html">OTHER</a>
+    </div>
+    <h1>GPS</h1>
+    <h2>使用waveshare公司GPS產品，型號L76X GPS HAT</h2>
+    <div class="content">
+        <div class="info">至<a href="https://www.waveshare.com/wiki/L76X_GPS_HAT">waveshare網站</a>下載產品 <a href="https://www.waveshare.com/wiki/File:L76X_GPS_HAT_user_manual_en.pdf">使用手冊</a> 與 <a href="https://www.waveshare.com/wiki/File:L76X_GPS_HAT_code.7z">Demo code</a><br>手冊內有多種測試GPS產品是否可以運作方法:<br>可以根據使用不同方法，接收GPS衛星回傳資料。
+        </div>
+        <div class="item0">
+            <p>特別注意</p>
+            <div class="note0">
+                <div class="note">1.黃色扣環需要根據使用不同方法，調整不同方案:<br>使用方法1用A；<br>使用方法3直接將GPS腳位對接樹莓派腳位用B；<br>使用方法3直接將GPS差在樹莓派USB插槽用A。<img src="photo/gps02.jpg" width="280px" height="230x" alt="port">
+                 </div>
+                <div class="note">2.使用方法3時，根據使用不A或B調整串口裝置程式:<br>使用B方案，程式用[/dev/ttyS0]；<br>使用A方案，程式用[/dev/ttyUSB0]<img src="photo/gps03.png" width="320x" height="20x" alt="port">
+                </div>  
+            </div>
+        </div>
+        <div class="item">
+            <ol>
+                <li>1.直接在電腦上測試(用USB連接電腦)</li>
+                    <p>開啟電腦上 [串口調適助手] 內建裝置，將[串口號]選擇為連接GPS產品的串口。[串列傳輸速率]為9600，[資料位]為8...其他不用改，選擇好後按下[打開串口]，就能接收到資料。
+                    <img src="photo/gps04.JPG" width="480px" height="360x" alt="port">
+                    </p>
+                
+                <li>2.Arduino測試</li>
+                <p>不討論，自行參閱waveshare公司使用手冊</p>
+                <li>3.樹梅派上測試</li>
+                <p>1. 下載Demo code 至樹莓派上，跟著使用手冊P10-P12的步驟執行，當執行完 [minicom -D /dev/ttyS0 -b 9600] 時(ttyS0請根據上面特別注意更改)，有出現下圖紅色區域，表是成功讀取GPS衛星資料。<br>
+                    2. 繼續執行使用手冊P12，RUNNING CODES部分，先更改資料夾中config.py檔案，根據特別注意第二點更改檔案中tty，再直接執行此兩步驟，為解析GPS衛星回傳資料(將紅色區塊資料解讀為黃色區塊)<br>
+                    <img src="photo/gps05.jpg" width="480px" height="50x" alt="port"><br>
+                    3. 出現下圖黃色區塊表示解讀成功。
+                    <figure>
+                        <img src="photo/gps06.jpg" width="480px" height="360x" alt="port">
+                        <figcaption>$GNRMC,時間,A(表示有讀取到位置經緯度),緯度,經度</figcaption>
+                    </figure>
+                    
+                </p>
+                <li>4.STM32測試</li>
+                <p>不討論，自行參閱waveshare公司使用手冊</p>
+            </ol>
+        </div>
+
+    </div>
+    <div class="footer">
+        &copy; copyright 2020 by yayar Hsiao<br><br>
+        mail: nnico12341tw@gmail.com
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LORA</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .note0{
+            display: flex;
+            margin: 0px 10px 0px 10px;
+        }
+        .item0 img{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="menu">
+        <a href="01.html">MENU</a>
+        <a href="lora.html.html">LORA</a>
+        <a href="gps.html">GPS</a>
+        <a href="lora-gps.html">LORA-application</a>
+        <a href="raspberrypi.html">RASPBERRYPI</a>
+        <a href="other.html">OTHER</a>
+    </div>
+    <h1>LORA</h1>
+    <h2>使用iFrogLab公司LoRa USB dongle gateway產品</h2>
+    <div class="content">
+
+        <div class="info">至 <a href="http://www.ifroglab.com/tw/?p=7315">iFrogLab網站</a> 觀看產品細項，並下載 <a href="https://github.com/iFrogLab/IL-LORA1272">官方程式</a> 測試使用。 <br> 至 <a href="https://github.com/StevenChu-ccp/LoRa1272">我的GitHub</a>下載我重整修改程式。
+        </div>
+        <div class="item0">
+            <p>這邊使用兩個LoRa USB dongle gateway產品，<br>一個接在Raspberrypi上做傳送端(藍色數字2.)；一個接在Windows系統上做接收端(藍色數字1.)</p>
+            <img src="photo/lora01.jpg" width="450px" height="300px" alt="lora介紹圖">
+        </div>
+
+        <div class="item">
+            <ol>
+                <li>1. iFrogLab 公司程式測試使用</li>
+                <p>1.將GitHub資料夾下載，開啟Samples-Python\02-iFrogLabLevel1-Lib資料夾 <br>(C:\IL-LORA1272\Samples-Python\02-iFrogLabLevel1-Lib)，使用裡面程式:<br> <br>
+                    2. 先將要執行的程式做以下修改，修改完畢，即可執行程式。
+                    <figure>
+                        <figcaption>調整串口編號，將serPort[-1]，改為[0]</figcaption>
+                        <img src="photo/lora02.png" alt="">
+                    </figure>  <br> 
+                    3. 在樹莓派上執行 ap-Lib-2-lora-send.py 程式<br> 
+                    <figure>
+                        <figcaption>LoRa.FunLora_5_write16bytesArray("111")，"傳送資料"，此為傳送111資料</figcaption>
+                        <img src="photo/lora03.png" alt="">
+                    </figure>  <br>
+                    4. 在Windows執行 ap-Lib-3-lora-read.py 程式 <br>
+                    <figure>
+                        <figcaption>下圖黃色筆刷處為接收到的資料，313131，此為"111"的ASCII碼</figcaption>
+                        <img src="photo/lora04.jpg" alt="ifroglab傳輸"> 
+                    </figure>
+                    上圖接收資料正確，即lora傳送成功!
+                </p>
+                <li>2. 重新編譯程式，對話功能</li>
+                <p>1.將GitHub資料夾下載，開啟LoRa1272資料夾<br>
+                    2. 在樹莓派上執行 LoRa_write.py 程式<br>
+                    <figure>
+                        <figcaption>黃色筆刷1.(hi hi)處為第一次傳輸；黃色筆刷2.(How are you?)為第二次傳輸；黃色筆刷3.(Hahaha)為第三次傳輸。<br>
+                        藍色筆刷4.為控制接收端關閉指令(remote quit)；藍色筆刷5.為傳送端關閉指令(QUIT)。</figcaption>
+                        <img src="photo/lora05.jpg" width="487px" height="416px" alt="">
+                    </figure>  <br> 
+                    3. 在Windows上執行 LoRa_read.py 程式<br>
+                    <figure>
+                        <figcaption>黃色筆刷1.(hi hi)處為第一次接收；黃色筆刷2.(How are you?)為第二次接收；黃色筆刷3.(Hahaha)為第三次接收。<br>
+                            藍色筆刷4.為傳送端傳送[接收端關閉]指令(remote quit)，接收端關閉。</figcaption>
+                        <img src="photo/lora06.jpg" width="487px" height="416px" alt="">
+                    </figure> 
+                    可以相互溝通傳送接收資料，為lora成功運作。
+                </p>
+            </ol>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; copyright 2020 by yayar Hsiao<br><br>
+        mail: nnico12341tw@gmail.com
+    </div>
+</div>   
+</body>
+</html>
