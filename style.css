@@ -1,0 +1,96 @@
+body{
+    background-image: url(/photo/background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container {
+    background-color: rgba(255, 255, 255, 0.6);
+    height:100%;
+}
+
+.footer{
+    text-align: center;
+    font-family:monospace;
+    background-color: rgba(3, 38, 77, 0.815);
+    color: azure;
+    margin-top: 30px;
+    padding: 30px 0;
+
+}
+.menu{
+    background-color:rgba(12, 48, 116, 0.349);
+    text-align: center;
+    font-size: 0px;
+}
+.menu img{
+    text-align: left;
+}
+.menu a{
+    color: #fff;
+    font-family:sans-serif;
+    display: inline-block;
+    text-decoration: none;
+    padding: 25px 30px;
+    font-size: 18px;
+}
+
+.menu a:hover{
+    background-color: rgb(21, 35, 117);
+    border-radius: 5px;
+}
+
+h1{
+    line-height: 1.5;
+    font-family:fantasy;
+    font-size: 70px;
+    margin-top: 50px; margin-bottom: 30px; 
+    text-align: center;
+}
+
+h2{
+    line-height: 1.5;
+    font-family:monospace;
+    font-size: 20px;
+    margin-bottom: 10px; 
+    text-align: center;
+}
+
+.content{
+    font-family:monospace;
+    font-size: 15px;
+    margin-bottom:5px; 
+    text-align: center;
+    line-height: 1.5;
+}
+
+.info{
+    margin-bottom:5px;
+}
+
+.item0{
+    background-color: rgba(192, 113, 76, 0.562);
+    border-radius: 8px;
+    width: 720px;
+    height: 380px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.item li{
+    background-color: rgba(12, 97, 64, 0.548);
+    font-weight: bold;
+    padding: 8px  36px;
+}
+
+.item figcaption{
+    font-family:monospace;
+    color: rgb(88, 85, 85);
+    font-size: 12px;
+    margin-bottom:5px; 
+}
+
+img{
+    border-radius: 8px;
+}
