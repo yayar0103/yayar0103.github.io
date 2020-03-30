@@ -20,15 +20,32 @@
     <h1>LORA-application</h1>
     <h2>lora 傳輸運用在外海，離岸風電施工打樁時，水下噪音的測量，將水下麥克風資料即時傳輸。</h2>   
     <div class="content">
+        <div class="info">
+            至 <a href="https://github.com/yayar0103/MarcoLora">我的Github</a> 觀看程式碼 
+        </div>
         <div class="item0">
             架構圖如下:<br>
             <img src="photo/app01.jpg" width="600px" height="350px"  alt="架構圖">
         </div>
         <div class="item">
             <ol>
-                <li>
-
-                </li>
+                <li> 1. 讀取水下麥克風wav檔，使用ftp下載</li>
+                <p> 參考程式 <a href="https://github.com/yayar0103/MarcoLora/blob/master/ftp_getdata.py"> ftp_getdata.py </a><br>
+                    1. 登入ftp下載水下麥克風資料，下載後即刪除水下麥克風內資料。<br>
+                    2. 至下載資料的資料夾內，一個一個讀取wav檔。<br>
+                    3. 將所有讀取到的檔案合併儲存為一個檔案。(後來未使用)
+                </p>
+                <li> 2. 將讀取到的wav音訊資料套用三分之一倍頻濾波器</li>
+                <p> 參考程式 <a href="https://github.com/yayar0103/MarcoLora/blob/master/wavTodb.py"> wavTodb.py </a><br>
+                    1. 使用Python多種音訊函式庫比對輸入訊號，因為wav音訊檔寫入方法不同，有不同解析度，適用不同函式庫。<br>
+                    2. 讀入音訊檔後，套用三分之一倍頻濾波器。<br>
+                    3. 將濾波資料做均分跟處理。<br>
+                    4. 將做完均分跟資料轉換為dB值。<br>
+                    5. 將所有頻率分貝值累加。<br>
+                    最後結果將輸出一秒一分貝值。
+                <li> 3. 將最後結果透過lora傳送</li>
+                <p> 參考程式 <a href="https://github.com/yayar0103/MarcoLora/blob/master/mian.py"> main.py </a><br>
+                    此為將所有分開步驟結合統整的程式。<br>
             </ol>
 
         </div>
